@@ -1,0 +1,21 @@
+{
+    "name": "seblhaire/bootstrappaginator",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sébastien L'haire",
+            "email": "sebastien@lhaire.org"
+        }
+    ],
+    "require": {},
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Seblhaire\\BootstrapPaginator\\BootstrapPaginatorServiceProvider"
+          ],
+          "aliases": {
+              "BootstrapPaginator": "Seblhaire\\BootstrapPaginator\\BootstrapPaginator"
+          }
+      }
+
+}
