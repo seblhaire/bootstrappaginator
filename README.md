@@ -131,8 +131,8 @@ or simply
 
 ## Config files
 
-Accessible through
-
+Config files are available, either in package directory in vendor\seblhaire/bootstrappaginator or in
+your app config directory if you publish config.
 ```php
 config('bootstrappaginator')
 ```
