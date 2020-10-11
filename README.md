@@ -39,7 +39,7 @@ $ php artisan vendor:publish
 `resources/lang/en/`. Simply add key:
 
 ```
-'all' => 'All'h
+'all' => 'All',
 ```
 
 
