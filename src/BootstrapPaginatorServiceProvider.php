@@ -1,6 +1,4 @@
-<?php
-
-namespace Seblhaire\BootstrapPaginator;
+<?php namespace Seblhaire\BootstrapPaginator;
 
 use Illuminate\Support\ServiceProvider;
 

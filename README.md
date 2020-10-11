@@ -7,7 +7,8 @@ A Laravel library to generate paginations with [Bootstrap](https://getbootstrap.
 This library provides two different pagnators:
 
 * a classical paginator with page numbers and previous and next button.
-* an alphabetical paginator with letters
+![paginator image](paginator.png)
+* an alphabetical paginator with letters ![paginator alpha image](paginatoralpha.png)
 
 Both paginators can be used in same page.
 
@@ -79,20 +80,25 @@ You can combine both paginators in a single page. In this case, initial will be 
 Route::get('/authors/{initial?}/{page?}', 'MainController@authors')->name('authors');
 ```
 
-In this case `https://test.site/authors` displays first page of all items. `https://test.site/authors/all/3` will display third page of all items. `https://test.site/authors/D` will display first page of items beginning with D. And `https://test.site/authors/D/3` will display third page of items beginning with D. Controller method can be declared like this:
+In this case `https://test.site/authors` displays first page of all items. `https://test.site/authors/all/3` will display third page of all items. `https://test.site/authors/D` will display first page of items beginning with D. And `https://test.site/authors/D/3` will display third page of items beginning with D. Initialize your method with default parameters and use them in your code:
 
 ```
-public function authors($initial = config('bootstrappaginator.valueforall'), $page =1){ ... }
-```
-
-Then the variables initiated in method arguments can be used in method content and passed in blade view: 
-
-```
-$route = 'authors';
-$options = ['nbpages' => 4, 'params' => ['initial' => $initial]];
-$optionalpha = ['type' => 'alpha'];
-$paginator = BootstrapPaginator::init($page, $route, $options);
-$paginatoralpha = BootstrapPaginator::init($initiale, $route, $optionalpha);
+public function authors($initial = null, $page =1){
+  ....
+   $initial = is_null($initial) ? config('bootstrappaginator.valueforall') : $initial;
+   $route = 'authors';
+   $options = ['nbpages' => 4, 'params' => ['initial' => $initial]];
+   $optionalpha = ['type' => 'alpha'];
+   $paginator = BootstrapPaginator::init($page, $route, $options);
+   $paginatoralpha = BootstrapPaginator::init($initiale, $route, $optionalpha);
+   ....
+   return view('pages.authors', [
+       ...
+       'paginator' => $paginator,
+       'paginatoralpha' => $paginatoralpha,
+       ...
+  ]);
+}
 ```
 
 In this example, numeric paginator will contain current initial in the link urls. Alpha paginator's links will direct web page users to the first page with the initial they contain. Then in the view, print your paginator like this:
@@ -115,12 +121,12 @@ or simply
       * `pageparam` : default `page`. Id of page parameter in route.
       * `nbpages`:  Default 1. Number of pages that will be displayed.
       * `withoutdots`: default `false`. Display all pages without spacing ranges by dots;
-      * `max_pages_without_dots`: default `9`. Maximum number of pages without dot separation. 
+      * `max_pages_without_dots`: default `9`. Maximum number of pages without dot separation.
       * `items_before_after_current`: default `2`. Number of pages to display before and after page item.
   * alpha paginator specific parameters:
      * `initialparam`: default `initial`. Id of initial parameter in route;
      * `valueforall` : delault `all`. Value used to display all items instead of items beginnig with a certain parameter.
-  * `class`: default `pagination`. Class of `<ul>` surrounding pagination.
+  * `class`: default `pagination justify-content-center`. Class of `<ul>` surrounding pagination.
   * `itemclass`: default `page-item`. Class of `<li>` element.
   * `linkclass`: default `page-link`. Class of `<a>` element.
   * `activelink`: default ` active`. Class added to current element.
@@ -133,7 +139,7 @@ or simply
 
 Config files are available, either in package directory in vendor\seblhaire/bootstrappaginator or in
 your app config directory if you publish config.
+
 ```php
 config('bootstrappaginator')
 ```
-
