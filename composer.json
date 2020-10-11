@@ -1,5 +1,6 @@
 {
     "name": "seblhaire/bootstrappaginator",
+    "description": "A Laravel library to generate paginations", 
     "type": "library",
     "authors": [
         {
