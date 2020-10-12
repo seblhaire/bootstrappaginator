@@ -143,3 +143,7 @@ your app config directory if you publish config.
 ```php
 config('bootstrappaginator')
 ```
+
+# Questions? Contributions?
+
+Feel free to send feature requests or merge request to the author or simply to ask questions.
