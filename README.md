@@ -18,7 +18,7 @@ Both paginators can be used in same page.
 
 2. Optionally install Boostrap using `npm install bootstrap`
 
-3. (optionally) add in `config/app.php`
+3. Composer will automatically link the package with Laravel. But you still can explicitely add provider and facade to your `config/app.php`:
 ```php
   'providers' => [
     ...
