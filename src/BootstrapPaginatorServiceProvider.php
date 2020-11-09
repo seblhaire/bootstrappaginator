@@ -13,7 +13,7 @@ class BootstrapPaginatorServiceProvider extends ServiceProvider
     public function boot()
     {
       $this->publishes([
-          __DIR__.'/../config/' => config_path('bootstrappaginator')
+          __DIR__.'/../config/' => config_path('bootstrappaginator.php')
         ]);
     }
 
