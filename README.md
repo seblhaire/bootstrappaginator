@@ -12,6 +12,8 @@ This library provides two different pagnators:
 
 Both paginators can be used in same page.
 
+Demo site available [here](https://sebastien.lhaire.org/paginator).
+
 # Installation
 
 1. `composer require seblhaire/bootstrappaginator`
