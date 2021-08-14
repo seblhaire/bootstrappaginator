@@ -2,7 +2,7 @@
 
 [By Sébastien L'haire](http://sebastien.lhaire.org)
 
-A Laravel library to generate paginations with [Bootstrap](https://getbootstrap.com/) 4 CSS Framework.
+A Laravel library to generate paginations with [Bootstrap](https://getbootstrap.com/) 4 or 5 CSS Framework.
 
 This library provides two different pagnators:
 
