@@ -1,6 +1,6 @@
 {
     "name": "seblhaire/bootstrappaginator",
-    "description": "A Laravel library to generate paginations", 
+    "description": "A Laravel library to generate paginations",
     "type": "library",
     "authors": [
         {
@@ -13,7 +13,7 @@
     "license": "MIT",
     "require": {
         "php": ">=5.6",
-        "illuminate/http": "^6.0|^7.0|^8.0"
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0|^10.0"
     },
     "autoload": {
         "psr-4": {

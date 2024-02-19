@@ -4,7 +4,7 @@
 
 A Laravel library to generate paginations with [Bootstrap](https://getbootstrap.com/) 4 or 5 CSS Framework.
 
-This library provides two different pagnators:
+This library provides two different paginators:
 
 * a classical paginator with page numbers and previous and next button.
 ![paginator image](paginator.png)
